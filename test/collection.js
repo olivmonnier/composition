@@ -8,7 +8,7 @@ const map = require('../src/collection').map;
 const sort = require('../src/collection').sort;
 const tail = require('../src/collection').tail;
 
-describe('Filter method', () => {
+describe('filter method', () => {
   it('should filtered an array', (done) => {
     const list = [1, 2, 3, 4];
     const f = filter((a) => a > 2);
