@@ -3,20 +3,50 @@ const expect = chai.expect;
 const assert = chai.assert;
 const compose = require('../src/function').compose;
 const curry = require('../src/function').curry;
+const flip = require('../src/function').flip;
+const pipe = require('../src/function').pipe;
 
 describe('compose method', () => {
-  it('should run methods', (done) => {
-    const addOne = (a) => a + 1;
-    const addTwo = (b) => b + 2;
-    const f = compose(addOne, addTwo);
+  it('should run methods reversed', (done) => {
+    const addCharA = (str) => str + 'A';
+    const addCharB = (str) => str + 'B';
+    const f = compose(addCharA, addCharB);
 
-    expect(f(0)).to.be.equal(3);
+    expect(typeof f).to.be.equal('function');
+    expect(f('foo')).to.be.equal('fooBA');
     done();
   });
 });
 
 describe('curry method', () => {
-  it('should invoke function with arguments passed', (done) => {
+  it('should return a function to invoke', (done) => {
+    const addOne = (a, b) => a + b + 1;
+    const f = curry(addOne);
 
+    expect(typeof f).to.be.equal('function');
+    expect(f(2)(1)).to.be.equal(4);
+    done();
+  });
+});
+
+describe('flip method', () => {
+  it('should invoke function with arguments reversed', (done) => {
+    const f = flip((a, b) => a + b);
+
+    expect(typeof f).to.be.equal('function');
+    expect(f('foo', 'bar')).to.be.equal('barfoo');
+    done();
+  });
+});
+
+describe('pipe method', () => {
+  it('should run methods', (done) => {
+    const addCharA = (str) => str + 'A';
+    const addCharB = (str) => str + 'B';
+    const f = pipe(addCharA, addCharB);
+
+    expect(typeof f).to.be.equal('function');
+    expect(f('foo')).to.be.equal('fooAB');
+    done();
   });
 });
