@@ -1,9 +1,16 @@
 const curry = require('./function').curry;
 
 /**
+ * compact method
+ * @param {Array} list
+ * @return {Array}
+ */
+const compact = list => list.filter(x => x !== null && x !== undefined);
+
+/**
  * filter method
  * @param {Function} fn
- * @param {Array} list
+ * @param {rray} list
  * @return {Array}
  */
 const filter = curry((fn, list) => list.filter(fn));
@@ -47,6 +54,7 @@ const sort = curry((fn, list) => [].concat(list).sort(fn));
 const tail = list => isEmpty(list) ? [] : list.slice(1, list.length);
 
 module.exports = {
+  compact,
   filter,
   isEmpty,
   join,

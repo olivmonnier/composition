@@ -1,12 +1,22 @@
 const chai = require('chai');
 const expect = chai.expect;
 const assert = chai.assert;
+const compact = require('../src/collection').compact;
 const filter = require('../src/collection').filter;
 const isEmpty = require('../src/collection').isEmpty;
 const join = require('../src/collection').join;
 const map = require('../src/collection').map;
 const sort = require('../src/collection').sort;
 const tail = require('../src/collection').tail;
+
+describe('compact method', () => {
+  it('should filtered an array', (done) => {
+    const list = [null, 1, 2, , 3, 4];
+
+    expect(compact(list)).to.deep.equal([1, 2, 3, 4]);
+    done();
+  });
+});
 
 describe('filter method', () => {
   it('should filtered an array', (done) => {
