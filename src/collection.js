@@ -15,6 +15,8 @@ const compact = list => list.filter(x => x !== null && x !== undefined);
  */
 const filter = curry((fn, list) => list.filter(fn));
 
+const head = list => list[0];
+
 /**
  * isEmpty method
  * @param {Array} list
@@ -29,6 +31,8 @@ const isEmpty = list => !(list && list.length > 0);
  * @return {String}
  */
 const join = (str, list) => list.join(str);
+
+const last = list => list[list.length - 1];
 
 /**
  * map method
@@ -56,8 +60,10 @@ const tail = list => isEmpty(list) ? [] : list.slice(1, list.length);
 module.exports = {
   compact,
   filter,
+  head,
   isEmpty,
   join,
+  last,
   map,
   sort,
   tail

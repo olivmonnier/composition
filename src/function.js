@@ -19,6 +19,12 @@ const curry = fn => (...args) => fn.bind(null, ...args);
  */
 const flip = curry((fn, ...args) => fn.apply(this, args.reverse()));
 
+const isEven = val => val % 2 === 0;
+
+const isNot = val => val == null || val == undefined;
+
+const maybe = (val, fn) => isNot(val) ? null : fn(val);
+
 /**
  * pipe method
  * @param {Function}
@@ -30,5 +36,8 @@ module.exports = {
   compose,
   curry,
   flip,
+  isEven,
+  isNot,
+  maybe,
   pipe
 }

@@ -1,6 +1,8 @@
 const curry = require('./function').curry;
 const tail = require('./collection').tail;
 
+const div = document.createElement('div');
+
 const capitalize = str => toUpperCase(s[0]) + toLowercase(tail(s));
 
 const hasSpaces = match(/\s+/g);
@@ -19,6 +21,8 @@ const toUpperCase = str => str.toUpperCase();
 
 const trim = str => str.replace(/^\s*|\s*$/g, '');
 
+const toHtml = str => (div.innerHtml = str) && div.childNodes;
+
 module.exports = {
   capitalize,
   hasSpaces,
@@ -26,6 +30,7 @@ module.exports = {
   match,
   replace,
   split,
+  toHtml,
   toLowerCase,
   toUpperCase,
   trim
