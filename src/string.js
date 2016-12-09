@@ -21,7 +21,7 @@ const toUpperCase = str => str.toUpperCase();
 
 const trim = str => str.replace(/^\s*|\s*$/g, '');
 
-const toHtml = str => (div.innerHtml = str) && div.childNodes;
+const toHtml = str => (div.innerHTML = str) && div.childNodes[0];
 
 module.exports = {
   capitalize,
