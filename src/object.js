@@ -1,5 +1,6 @@
-const matches = (obj, props) => Object.keys(props).every((key) => obj[key] === props[key]);
+/**
+ * Object module
+ * @module object
+ */
 
-module.exports = {
-  matches
-}
+export const matches = (obj, props) => Object.keys(props).every((key) => obj[key] === props[key]);

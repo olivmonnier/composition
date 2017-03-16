@@ -1,37 +1,30 @@
-const curry = require('./function').curry;
-const tail = require('./collection').tail;
+/**
+ * String module
+ * @module string
+ */
 
-const div = document.createElement('div');
+export const curry = require('./function').curry;
 
-const capitalize = str => toUpperCase(s[0]) + toLowercase(tail(s));
+export const tail = require('./collection').tail;
 
-const hasSpaces = match(/\s+/g);
+export const div = document.createElement('div');
 
-const head = str => str[0];
+export const capitalize = str => toUpperCase(s[0]) + toLowercase(tail(s));
 
-const match = curry((what, str) => str.match(what));
+export const hasSpaces = match(/\s+/g);
 
-const replace = curry((what, replacement, str) => str.replace(what, replacement));
+export const head = str => str[0];
 
-const split = splitOn => str => str.split(splitOn);
+export const match = curry((what, str) => str.match(what));
 
-const toLowerCase = str => str.toLowerCase();
+export const replace = curry((what, replacement, str) => str.replace(what, replacement));
 
-const toUpperCase = str => str.toUpperCase();
+export const split = splitOn => str => str.split(splitOn);
 
-const trim = str => str.replace(/^\s*|\s*$/g, '');
+export const toLowerCase = str => str.toLowerCase();
 
-const toHtml = str => (div.innerHtml = str) && div.childNodes;
+export const toUpperCase = str => str.toUpperCase();
 
-module.exports = {
-  capitalize,
-  hasSpaces,
-  head,
-  match,
-  replace,
-  split,
-  toHtml,
-  toLowerCase,
-  toUpperCase,
-  trim
-}
+export const trim = str => str.replace(/^\s*|\s*$/g, '');
+
+export const toHtml = str => (div.innerHtml = str) && div.childNodes;

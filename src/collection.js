@@ -1,28 +1,38 @@
 const curry = require('./function').curry;
+/**
+ * Collection module
+ * @module collection
+ */
 
 /**
  * compact method
+ * @alias module:collection.compact
  * @param {Array} list
  * @return {Array}
  */
-const compact = list => list.filter(x => x !== null && x !== undefined);
+export const compact = list => list.filter(x => x !== null && x !== undefined);
 
 /**
  * filter method
  * @param {Function} fn
- * @param {rray} list
+ * @param {Array} list
  * @return {Array}
  */
-const filter = curry((fn, list) => list.filter(fn));
+export const filter = curry((fn, list) => list.filter(fn));
 
-const head = list => list[0];
+/**
+ * head method
+ * @param {Array} list
+ * @return {*}
+ */
+export const head = list => list[0];
 
 /**
  * isEmpty method
  * @param {Array} list
  * @return {Boolean}
  */
-const isEmpty = list => !(list && list.length > 0);
+export const isEmpty = list => !(list && list.length > 0);
 
 /**
  * join method
@@ -30,9 +40,14 @@ const isEmpty = list => !(list && list.length > 0);
  * @param {Array} list
  * @return {String}
  */
-const join = (str, list) => list.join(str);
+export const join = (str, list) => list.join(str);
 
-const last = list => list[list.length - 1];
+/**
+ * last method
+ * @param {Array} list
+ * @return {*}
+ */
+export const last = list => list[list.length - 1];
 
 /**
  * map method
@@ -40,7 +55,7 @@ const last = list => list[list.length - 1];
  * @param {Array} list
  * @return {Array}
  */
-const map = curry((fn, list) => list.map(fn));
+export const map = curry((fn, list) => list.map(fn));
 
 /**
  * sort method
@@ -48,23 +63,11 @@ const map = curry((fn, list) => list.map(fn));
  * @param {Array} list
  * @return {Array}
  */
-const sort = curry((fn, list) => [].concat(list).sort(fn));
+export const sort = curry((fn, list) => [].concat(list).sort(fn));
 
 /**
  * tail method
  * @param {Array} list
  * @return {Array}
  */
-const tail = list => isEmpty(list) ? [] : list.slice(1, list.length);
-
-module.exports = {
-  compact,
-  filter,
-  head,
-  isEmpty,
-  join,
-  last,
-  map,
-  sort,
-  tail
-}
+export const tail = list => isEmpty(list) ? [] : list.slice(1, list.length);
