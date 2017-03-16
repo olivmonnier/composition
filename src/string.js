@@ -27,4 +27,4 @@ export const toUpperCase = str => str.toUpperCase();
 
 export const trim = str => str.replace(/^\s*|\s*$/g, '');
 
-export const toHtml = str => (div.innerHtml = str) && div.childNodes;
+export const toHtml = str => (div.innerHTML = str) && div.childNodes;
