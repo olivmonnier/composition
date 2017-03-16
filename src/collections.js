@@ -21,12 +21,36 @@ export const compact = list => list.filter(x => x !== null && x !== undefined);
 export const each = curry((fn, list) => list.each(fn));
 
 /**
+ * every method
+ * @param {Function} fn
+ * @param {Array} list
+ * @return {*}
+ */
+export const every = curry((fn, list) => list.every(fn));
+
+/**
  * filter method
  * @param {Function} fn
  * @param {Array} list
  * @return {Array}
  */
 export const filter = curry((fn, list) => list.filter(fn));
+
+/**
+ * find method
+ * @param {Function} fn
+ * @param {Array} list
+ * @return {*}
+ */
+export const find = curry((fn, list) => list.find(fn));
+
+/**
+ * findIndex method
+ * @param {Function} fn
+ * @param {Array} list
+ * @return {Integer}
+ */
+export const findIndex = curry((fn, list) => list.findIndex(fn));
 
 /**
  * head method
@@ -78,6 +102,14 @@ export const pluck = (list, prop) => list.map(o => o.prop);
  * @return {*}
  */
 export const slice = list => [].slice.call(list);
+
+/**
+ * some method
+ * @param {Function} fn
+ * @param {Array} list
+ * @return {Boolean}
+ */
+export const some = curry((fn, list) => list.some(fn));
 
 /**
  * sort method
