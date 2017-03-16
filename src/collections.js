@@ -1,7 +1,7 @@
-const curry = require('./function').curry;
+import { curry } from './functions';
 /**
- * Collection module
- * @module collection
+ * Collections module
+ * @module collections
  */
 
 /**
@@ -56,6 +56,13 @@ export const last = list => list[list.length - 1];
  * @return {Array}
  */
 export const map = curry((fn, list) => list.map(fn));
+
+/**
+ * pluck method
+ * @param {Array} list
+ * @return {Array}
+ */
+export const pluck = (list, prop) => list.map(o => o.prop);
 
 /**
  * sort method

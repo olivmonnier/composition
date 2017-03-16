@@ -1,6 +1,6 @@
 /**
- * Function module
- * @module function
+ * Functions module
+ * @module functions
  */
 
 /**

@@ -1,4 +1,4 @@
-const maybe = require('../function').maybe;
+import { maybe } from '../functions';
 
 class Maybe {
   constructor(val) {

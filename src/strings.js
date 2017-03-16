@@ -1,11 +1,10 @@
+import { curry } from './functions';
+import { tail } from './collections';
+
 /**
- * String module
- * @module string
+ * Strings module
+ * @module strings
  */
-
-export const curry = require('./function').curry;
-
-export const tail = require('./collection').tail;
 
 export const div = document.createElement('div');
 
