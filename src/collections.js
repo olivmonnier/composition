@@ -13,6 +13,14 @@ import { curry } from './functions';
 export const compact = list => list.filter(x => x !== null && x !== undefined);
 
 /**
+ * each method
+ * @param {Function} fn
+ * @param {Array} list
+ * @return {*}
+ */
+export const each = curry((fn, list) => list.each(fn));
+
+/**
  * filter method
  * @param {Function} fn
  * @param {Array} list
@@ -63,6 +71,13 @@ export const map = curry((fn, list) => list.map(fn));
  * @return {Array}
  */
 export const pluck = (list, prop) => list.map(o => o.prop);
+
+/**
+ * slice method
+ * @param {Array} list
+ * @return {*}
+ */
+export const slice = list => [].slice.call(list);
 
 /**
  * sort method
