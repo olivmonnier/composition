@@ -1,6 +1,6 @@
 import { maybe } from '../functions';
 
-class Maybe {
+export class Maybe {
   constructor(val) {
     this.__value = val;
   }
@@ -21,5 +21,3 @@ class Maybe {
     return new Maybe(val);
   }
 }
-
-module.exports = Maybe;
