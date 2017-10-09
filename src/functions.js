@@ -1,3 +1,5 @@
+import { slice } from './collections';
+
 /**
  * Functions module
  * @module functions
@@ -20,12 +22,21 @@ export const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
 export const curry = fn => (...args) => fn.bind(null, ...args);
 
 /**
+ * currier method
+ * 
+ * @param {Function} fn 
+ * @param {*} args1 
+ * @return {*}
+ */
+export const currier = (fn, ...args1) => (...args2) => fn(...args1, ...args2);
+
+/**
  * flip method
  * 
  * @param {Function} fn
  * @return {Function}
  */
-export const flip = curry((fn, ...args) => fn.apply(this, args.reverse()));
+export const flip = (fn, ...args) => fn.bind(null, args.reverse());
 
 /**
  * isEven method
@@ -58,3 +69,5 @@ export const maybe = (val, fn) => isNot(val) ? null : fn(val);
  * @return {Function}
  */
 export const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+
+export const unary = fn => fn.length === 1 ? fn : (something) => fn.call(this, something);

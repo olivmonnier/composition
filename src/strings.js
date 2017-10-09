@@ -1,12 +1,13 @@
 import { curry } from './functions';
 import { tail } from './collections';
+import { createElement } from './dom';
 
 /**
  * Strings module
  * @module strings
  */
 
-export const div = document.createElement('div');
+const div = createElement('div');
 
 export const capitalize = str => toUpperCase(s[0]) + toLowercase(tail(s));
 
@@ -14,9 +15,9 @@ export const hasSpaces = match(/\s+/g);
 
 export const head = str => str[0];
 
-export const match = curry((what, str) => str.match(what));
+export const match = (str, what) => str.match(what);
 
-export const replace = curry((what, replacement, str) => str.replace(what, replacement));
+export const replace = (str, what, replacement) => str.replace(what, replacement);
 
 export const split = splitOn => str => str.split(splitOn);
 

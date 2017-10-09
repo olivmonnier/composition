@@ -1,4 +1,5 @@
 require('./collections');
+require('./dom');
 require('./functions');
 require('./objects');
 require('./strings');

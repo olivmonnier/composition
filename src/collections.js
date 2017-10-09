@@ -1,4 +1,3 @@
-import { curry } from './functions';
 /**
  * Collections module
  * @module collections
@@ -19,7 +18,7 @@ export const compact = list => from(list).filter(x => x !== null && x !== undefi
  * @param {Array} list
  * @return {*}
  */
-export const each = fn => list => from(list).each(fn);
+export const each = (list, fn) => from(list).each(fn);
 
 /**
  * every method
@@ -28,7 +27,7 @@ export const each = fn => list => from(list).each(fn);
  * @param {Array} list
  * @return {*}
  */
-export const every = fn => list => from(list).every(fn);
+export const every = (list, fn) => from(list).every(fn);
 
 /**
  * filter method
@@ -37,7 +36,7 @@ export const every = fn => list => from(list).every(fn);
  * @param {Array} list
  * @return {Array}
  */
-export const filter = fn => list => from(list).filter(fn);
+export const filter = (list, fn) => from(list).filter(fn);
 
 /**
  * find method
@@ -46,7 +45,7 @@ export const filter = fn => list => from(list).filter(fn);
  * @param {Array} list
  * @return {*}
  */
-export const find = fn => list => from(list).find(fn);
+export const find = (list, fn) => from(list).find(fn);
 
 /**
  * findIndex method
@@ -55,7 +54,7 @@ export const find = fn => list => from(list).find(fn);
  * @param {Array} list
  * @return {Integer}
  */
-export const findIndex = fn => list => from(list).findIndex(fn);
+export const findIndex = (list, fn) => from(list).findIndex(fn);
 
 /**
  * from method
@@ -92,11 +91,11 @@ export const isEmpty = list => !(list && list.length > 0);
 /**
  * join method
  * 
- * @param {String} str
  * @param {Array} list
+ * @param {String} str
  * @return {String}
  */
-export const join = (str, list) => from(list).join(str);
+export const join = (list, str) => from(list).join(str);
 
 /**
  * last method
@@ -113,7 +112,7 @@ export const last = list => list[list.length - 1];
  * @param {Array} list
  * @return {Array}
  */
-export const map = fn => list => from(list).map(fn);
+export const map = (list, fn) => from(list).map(fn);
 
 /**
  * pluck method
@@ -137,7 +136,7 @@ export const random = list => list[Math.floor(Math.random() * list.length)];
  * @param {Array} list
  * @return {*}
  */
-export const slice = (...args) => list => from(list).slice(...args);
+export const slice = (list, ...args) => from(list).slice(...args);
 
 /**
  * some method
@@ -146,7 +145,7 @@ export const slice = (...args) => list => from(list).slice(...args);
  * @param {Array} list
  * @return {Boolean}
  */
-export const some = fn => list => from(list).some(fn);
+export const some = (list, fn) => from(list).some(fn);
 
 /**
  * sort method
@@ -155,7 +154,7 @@ export const some = fn => list => from(list).some(fn);
  * @param {Array} list
  * @return {Array}
  */
-export const sort = fn => list => from(list).sort(fn);
+export const sort = (list, fn) => from(list).sort(fn);
 
 /**
  * tail method
@@ -164,3 +163,5 @@ export const sort = fn => list => from(list).sort(fn);
  * @return {Array}
  */
 export const tail = list => isEmpty(list) ? [] : from(list).slice(1, list.length);
+
+export const wrap = something => [something];
