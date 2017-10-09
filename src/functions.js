@@ -31,6 +31,15 @@ export const curry = fn => (...args) => fn.bind(null, ...args);
 export const currier = (fn, ...args1) => (...args2) => fn(...args1, ...args2);
 
 /**
+ * def method
+ * 
+ * @param {*} x
+ * @return {Boolean} 
+ */
+
+export const def = x => typeof x !== 'undefined';
+
+/**
  * flip method
  * 
  * @param {Function} fn
@@ -71,3 +80,11 @@ export const maybe = (val, fn) => isNot(val) ? null : fn(val);
 export const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
 
 export const unary = fn => fn.length === 1 ? fn : (something) => fn.call(this, something);
+
+/**
+ * undef method
+ * 
+ * @param {*} x
+ * @return {Boolean}
+ */
+export const undef = x => !def(x)

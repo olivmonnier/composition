@@ -12,6 +12,14 @@
 export const compact = list => from(list).filter(x => x !== null && x !== undefined);
 
 /**
+ * copy method
+ * 
+ * @param {Array} list
+ * @return {Array}
+ */
+export const copy = list => [...list];
+
+/**
  * each method
  * 
  * @param {Function} fn
@@ -67,10 +75,10 @@ export const from = list => Array.from(list);
 /**
  * head method
  * 
- * @param {Array} list
+ * @param {*} x
  * @return {*}
  */
-export const head = list => list[0];
+export const head = ([x]) => x;
 
 /**
  * isArray method
@@ -162,6 +170,6 @@ export const sort = (list, fn) => from(list).sort(fn);
  * @param {Array} list
  * @return {Array}
  */
-export const tail = list => isEmpty(list) ? [] : from(list).slice(1, list.length);
+export const tail = ([x, ...xs]) => xs;
 
 export const wrap = something => [something];
