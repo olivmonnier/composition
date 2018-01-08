@@ -72,6 +72,36 @@ export const isNot = val => val == null || val == undefined;
 export const maybe = (val, fn) => isNot(val) ? null : fn(val);
 
 /**
+ * once method
+ */
+export const once = fn => {
+  let done = false;
+
+  return (...args) => {
+    if (!done) {
+      done = true;
+      fn(...args)
+    }
+  }
+}
+
+/**
+ * onceAndAfter method
+ */
+export const onceAndAfter = (f, g = () => {}) => {
+  let done = false;
+
+  return (...args) => {
+    if (!done) {
+      done = true;
+      f(...args)
+    } else {
+      g(...args)
+    }
+  }
+}
+
+/**
  * pipe method
  * 
  * @param {Function}
