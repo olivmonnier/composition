@@ -48,6 +48,12 @@ export const def = x => typeof x !== 'undefined';
 export const flip = (fn, ...args) => fn.bind(null, args.reverse());
 
 /**
+ * invert method
+ * @param {Function} fn
+ */
+export const invert = fn => (...args) => -fn(...args);
+
+/**
  * isEven method
  * 
  * @param {*} val 
@@ -72,32 +78,50 @@ export const isNot = val => val == null || val == undefined;
 export const maybe = (val, fn) => isNot(val) ? null : fn(val);
 
 /**
+ * memoize method
+ * @param {Function} fn
+ */
+export const memoize = fn => {
+  let cache = {};
+  return (...args) => {
+    let strX = JSON.stringify(args);
+    return strX in cache ? cache[strX] : (cache[strX] = fn(...args));
+  }
+}
+
+/**
+ * not method
+ * @param {Function} fn
+ */
+export const not = fn => (...args) => !fn(...args);
+
+/**
  * once method
  */
 export const once = fn => {
   let done = false;
+  let result;
 
   return (...args) => {
     if (!done) {
       done = true;
-      fn(...args)
+      result = fn(...args)
     }
+
+    return result;
   }
 }
 
 /**
  * onceAndAfter method
  */
-export const onceAndAfter = (f, g = () => {}) => {
-  let done = false;
+export const onceAndAfter = (f, g) => {
+  let toCall = f;
 
   return (...args) => {
-    if (!done) {
-      done = true;
-      f(...args)
-    } else {
-      g(...args)
-    }
+    let result = toCall(...args);
+    toCall = g;
+    return result;
   }
 }
 
@@ -109,7 +133,11 @@ export const onceAndAfter = (f, g = () => {}) => {
  */
 export const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
 
-export const unary = fn => fn.length === 1 ? fn : (something) => fn.call(this, something);
+/**
+ * unary method
+ * @param {Function}
+ */
+export const unary = fn => (...args) => fn(args[0])
 
 /**
  * undef method

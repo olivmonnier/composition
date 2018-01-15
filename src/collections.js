@@ -22,47 +22,47 @@ export const copy = list => [...list];
 /**
  * each method
  * 
- * @param {Function} fn
  * @param {Array} list
+ * @param {Function} fn
  * @return {*}
  */
-export const each = (list, fn) => from(list).each(fn);
+export const each = (list, fn) => from(list).forEach(fn);
 
 /**
  * every method
  * 
- * @param {Function} fn
  * @param {Array} list
+ * @param {Function} fn
  * @return {*}
  */
-export const every = (list, fn) => from(list).every(fn);
+export const every = (list, fn) => list.reduce((x, y) => x && fn(y), true);
 
 /**
  * filter method
  * 
- * @param {Function} fn
  * @param {Array} list
+ * @param {Function} fn
  * @return {Array}
  */
-export const filter = (list, fn) => from(list).filter(fn);
+export const filter = (list, fn) => list.reduce((x, y) => (fn(y) ? x.concat(y) : x), []);
 
 /**
  * find method
  * 
- * @param {Function} fn
  * @param {Array} list
+ * @param {Function} fn
  * @return {*}
  */
-export const find = (list, fn) => from(list).find(fn);
+export const find = (list, fn) => list.reduce((x, y) => (x === undefined && fn(y) ? y : x), undefined);
 
 /**
  * findIndex method
  * 
- * @param {Function} fn
  * @param {Array} list
+ * @param {Function} fn
  * @return {Integer}
  */
-export const findIndex = (list, fn) => from(list).findIndex(fn);
+export const findIndex = (list, fn) => list.reduce((x, y, i) => (x == -1 && fn(y) ? i : x), -1);
 
 /**
  * from method
@@ -116,11 +116,18 @@ export const last = list => list[list.length - 1];
 /**
  * map method
  * 
- * @param {Function} fn
  * @param {Array} list
+ * @param {Function} fn
  * @return {Array}
  */
 export const map = (list, fn) => from(list).map(fn);
+
+/**
+ * none method
+ * @param {Array} list
+ * @param {Function} fn
+ */
+export const none = (list, fn) => every(list, (v) => !fn(v));
 
 /**
  * pluck method
@@ -149,17 +156,17 @@ export const slice = (list, ...args) => from(list).slice(...args);
 /**
  * some method
  * 
- * @param {Function} fn
  * @param {Array} list
+ * @param {Function} fn
  * @return {Boolean}
  */
-export const some = (list, fn) => from(list).some(fn);
+export const some = (list, fn) => list.reduce((x, y) => x || fn(y), false);
 
 /**
  * sort method
  * 
- * @param {Function} fn
  * @param {Array} list
+ * @param {Function} fn
  * @return {Array}
  */
 export const sort = (list, fn) => from(list).sort(fn);
