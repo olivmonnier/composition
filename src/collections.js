@@ -35,7 +35,7 @@ export const each = (list, fn) => from(list).forEach(fn);
  * @param {Function} fn
  * @return {*}
  */
-export const every = (list, fn) => list.reduce((x, y) => x && fn(y), true);
+export const every = (list, fn) => from(list).reduce((x, y) => x && fn(y), true);
 
 /**
  * filter method
@@ -44,7 +44,7 @@ export const every = (list, fn) => list.reduce((x, y) => x && fn(y), true);
  * @param {Function} fn
  * @return {Array}
  */
-export const filter = (list, fn) => list.reduce((x, y) => (fn(y) ? x.concat(y) : x), []);
+export const filter = (list, fn) => from(list).reduce((x, y) => (fn(y) ? x.concat(y) : x), []);
 
 /**
  * find method
@@ -53,7 +53,7 @@ export const filter = (list, fn) => list.reduce((x, y) => (fn(y) ? x.concat(y) :
  * @param {Function} fn
  * @return {*}
  */
-export const find = (list, fn) => list.reduce((x, y) => (x === undefined && fn(y) ? y : x), undefined);
+export const find = (list, fn) => from(list).reduce((x, y) => (x === undefined && fn(y) ? y : x), undefined);
 
 /**
  * findIndex method
@@ -62,7 +62,7 @@ export const find = (list, fn) => list.reduce((x, y) => (x === undefined && fn(y
  * @param {Function} fn
  * @return {Integer}
  */
-export const findIndex = (list, fn) => list.reduce((x, y, i) => (x == -1 && fn(y) ? i : x), -1);
+export const findIndex = (list, fn) => from(list).reduce((x, y, i) => (x == -1 && fn(y) ? i : x), -1);
 
 /**
  * from method
@@ -160,7 +160,7 @@ export const slice = (list, ...args) => from(list).slice(...args);
  * @param {Function} fn
  * @return {Boolean}
  */
-export const some = (list, fn) => list.reduce((x, y) => x || fn(y), false);
+export const some = (list, fn) => from(list).reduce((x, y) => x || fn(y), false);
 
 /**
  * sort method
