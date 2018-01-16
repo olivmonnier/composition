@@ -1,8 +1,7 @@
-require('./collections');
-require('./dom');
-require('./functions');
-require('./objects');
-require('./strings');
+export * from './collections';
+export * from './dom';
+export * from './functions';
+export * from './objects';
+export * from './strings';
 
-// Functors
-require('./Functors/Maybe');
+export * from './Functors/Maybe';

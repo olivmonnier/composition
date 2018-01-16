@@ -7,9 +7,12 @@ import { createElement } from './dom';
  * @module strings
  */
 
-const div = createElement('div');
-
 export const capitalize = str => toUpperCase(s[0]) + toLowercase(tail(s));
+
+export const endingWith = (str, strMatch) => {
+  const regex = new RegExp(`${strMatch}$`)
+  return regex.test(str)
+}
 
 export const hasSpaces = match(/\s+/g);
 
@@ -21,10 +24,18 @@ export const replace = (str, what, replacement) => str.replace(what, replacement
 
 export const split = splitOn => str => str.split(splitOn);
 
+export const startingWith = (str, strMatch) => {
+  const regex = new RegExp(`^${strMatch}`)
+  return regex.test(str)
+}
+
 export const toLowerCase = str => str.toLowerCase();
 
 export const toUpperCase = str => str.toUpperCase();
 
 export const trim = str => str.replace(/^\s*|\s*$/g, '');
 
-export const toHtml = str => (div.innerHTML = str) && div.childNodes;
+export const toHtml = str => {
+  const parser = new DOMParser();
+  return parser.parseFromString(str, 'text/xml');
+}
