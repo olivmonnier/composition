@@ -7,7 +7,7 @@
  * compact method
  * 
  * @param {Array} list
- * @return {Array}
+ * @returns {Array}
  */
 export const compact = list => from(list).filter(x => x !== null && x !== undefined);
 
@@ -15,7 +15,7 @@ export const compact = list => from(list).filter(x => x !== null && x !== undefi
  * copy method
  * 
  * @param {Array} list
- * @return {Array}
+ * @returns {Array}
  */
 export const copy = list => [...list];
 
@@ -24,7 +24,7 @@ export const copy = list => [...list];
  * 
  * @param {Array} list
  * @param {Function} fn
- * @return {*}
+ * @returns {*}
  */
 export const each = (list, fn) => from(list).forEach(fn);
 
@@ -33,7 +33,7 @@ export const each = (list, fn) => from(list).forEach(fn);
  * 
  * @param {Array} list
  * @param {Function} fn
- * @return {*}
+ * @returns {*}
  */
 export const every = (list, fn) => from(list).reduce((x, y) => x && fn(y), true);
 
@@ -42,7 +42,7 @@ export const every = (list, fn) => from(list).reduce((x, y) => x && fn(y), true)
  * 
  * @param {Array} list
  * @param {Function} fn
- * @return {Array}
+ * @returns {Array}
  */
 export const filter = (list, fn) => from(list).reduce((x, y) => (fn(y) ? x.concat(y) : x), []);
 
@@ -51,7 +51,7 @@ export const filter = (list, fn) => from(list).reduce((x, y) => (fn(y) ? x.conca
  * 
  * @param {Array} list
  * @param {Function} fn
- * @return {*}
+ * @returns {*}
  */
 export const find = (list, fn) => from(list).reduce((x, y) => (x === undefined && fn(y) ? y : x), undefined);
 
@@ -60,7 +60,7 @@ export const find = (list, fn) => from(list).reduce((x, y) => (x === undefined &
  * 
  * @param {Array} list
  * @param {Function} fn
- * @return {Integer}
+ * @returns {Integer}
  */
 export const findIndex = (list, fn) => from(list).reduce((x, y, i) => (x == -1 && fn(y) ? i : x), -1);
 
@@ -68,7 +68,7 @@ export const findIndex = (list, fn) => from(list).reduce((x, y, i) => (x == -1 &
  * from method
  * 
  * @param {Array} list
- * @return {Array}
+ * @returns {Array}
  */
 export const from = list => Array.from(list);
 
@@ -76,7 +76,7 @@ export const from = list => Array.from(list);
  * head method
  * 
  * @param {*} x
- * @return {*}
+ * @returns {*}
  */
 export const head = ([x]) => x;
 
@@ -84,7 +84,7 @@ export const head = ([x]) => x;
  * isArray method
  * 
  * @param {Array} list
- * @return {Boolean}
+ * @returns {Boolean}
  */
 export const isArray = list => Array.isArray(list);
 
@@ -92,7 +92,7 @@ export const isArray = list => Array.isArray(list);
  * isEmpty method
  * 
  * @param {Array} list
- * @return {Boolean}
+ * @returns {Boolean}
  */
 export const isEmpty = list => !(list && list.length > 0);
 
@@ -101,7 +101,7 @@ export const isEmpty = list => !(list && list.length > 0);
  * 
  * @param {Array} list
  * @param {String} str
- * @return {String}
+ * @returns {String}
  */
 export const join = (list, str) => from(list).join(str);
 
@@ -109,7 +109,7 @@ export const join = (list, str) => from(list).join(str);
  * last method
  * 
  * @param {Array} list
- * @return {*}
+ * @returns {*}
  */
 export const last = list => list[list.length - 1];
 
@@ -118,7 +118,7 @@ export const last = list => list[list.length - 1];
  * 
  * @param {Array} list
  * @param {Function} fn
- * @return {Array}
+ * @returns {Array}
  */
 export const map = (list, fn) => from(list).map(fn);
 
@@ -126,6 +126,7 @@ export const map = (list, fn) => from(list).map(fn);
  * none method
  * @param {Array} list
  * @param {Function} fn
+ * @returns {*}
  */
 export const none = (list, fn) => every(list, (v) => !fn(v));
 
@@ -133,15 +134,16 @@ export const none = (list, fn) => every(list, (v) => !fn(v));
  * pluck method
  * 
  * @param {Array} list
- * @return {Array}
+ * @param {String} prop
+ * @returns {Array}
  */
-export const pluck = (list, prop) => from(list).map(o => o.prop);
+export const pluck = (list, prop) => from(list).map(o => o[prop]);
 
 /**
  * random method
  * 
  * @param {Array} list
- * @return {*}
+ * @returns {*}
  */
 export const random = list => list[Math.floor(Math.random() * list.length)];
 
@@ -150,7 +152,7 @@ export const random = list => list[Math.floor(Math.random() * list.length)];
  * 
  * @param {Array} list
  * @param {Integer} oldIndex
- * @return {Array}
+ * @returns {Array}
  */
 export const removeIndex = (list, oldIndex) => [].concat(
   list.slice(0, oldIndex),
@@ -161,7 +163,7 @@ export const removeIndex = (list, oldIndex) => [].concat(
  * slice method
  * 
  * @param {Array} list
- * @return {*}
+ * @returns {*}
  */
 export const slice = (list, ...args) => from(list).slice(...args);
 
@@ -170,7 +172,7 @@ export const slice = (list, ...args) => from(list).slice(...args);
  * 
  * @param {Array} list
  * @param {Function} fn
- * @return {Boolean}
+ * @returns {Boolean}
  */
 export const some = (list, fn) => from(list).reduce((x, y) => x || fn(y), false);
 
@@ -179,7 +181,7 @@ export const some = (list, fn) => from(list).reduce((x, y) => x || fn(y), false)
  * 
  * @param {Array} list
  * @param {Function} fn
- * @return {Array}
+ * @returns {Array}
  */
 export const sort = (list, fn) => from(list).sort(fn);
 
@@ -187,7 +189,7 @@ export const sort = (list, fn) => from(list).sort(fn);
  * tail method
  * 
  * @param {Array} list
- * @return {Array}
+ * @returns {Array}
  */
 export const tail = ([x, ...xs]) => xs;
 
@@ -196,7 +198,7 @@ export const tail = ([x, ...xs]) => xs;
  * 
  * @param {Array} list
  * @param {Integer} oldIndex
- * @return {Array}
+ * @returns {Array}
  */
 export const toFirst = (list, oldIndex) => [].concat(
   list[oldIndex],
@@ -208,7 +210,7 @@ export const toFirst = (list, oldIndex) => [].concat(
  * 
  * @param {Array} list
  * @param {Integer} oldIndex
- * @return {Array}
+ * @returns {Array}
  */
 export const toLast = (list, oldIndex) => [].concat(
   removeIndex(list, oldIndex),
@@ -218,6 +220,6 @@ export const toLast = (list, oldIndex) => [].concat(
 /**
  * wrap method
  * @param {*} something 
- * @return {Array}
+ * @returns {Array}
  */
 export const wrap = something => [something];

@@ -8,8 +8,8 @@ import { slice } from './collections';
 /**
  * compose method
  * 
- * @param {Function}
- * @return {Function}
+ * @param {Array} fns
+ * @returns {Function}
  */
 export const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
 
@@ -17,16 +17,16 @@ export const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
  * curry method
  * 
  * @param {Function} fn
- * @return {*}
+ * @returns {*}
  */
-export const curry = fn => (...args) => fn.bind(null, ...args);
+export const curry = fn => (...args) => fn.apply(null, args);
 
 /**
  * currier method
  * 
  * @param {Function} fn 
  * @param {*} args1 
- * @return {*}
+ * @returns {*}
  */
 export const currier = (fn, ...args1) => (...args2) => fn(...args1, ...args2);
 
@@ -34,7 +34,7 @@ export const currier = (fn, ...args1) => (...args2) => fn(...args1, ...args2);
  * def method
  * 
  * @param {*} x
- * @return {Boolean} 
+ * @returns {Boolean} 
  */
 
 export const def = x => typeof x !== 'undefined';
@@ -43,13 +43,14 @@ export const def = x => typeof x !== 'undefined';
  * flip method
  * 
  * @param {Function} fn
- * @return {Function}
+ * @returns {Function}
  */
 export const flip = fn => (...args) => fn.apply(null, args.reverse());
 
 /**
  * invert method
  * @param {Function} fn
+ * @returns {*}
  */
 export const invert = fn => (...args) => -fn(...args);
 
@@ -57,7 +58,7 @@ export const invert = fn => (...args) => -fn(...args);
  * isEven method
  * 
  * @param {*} val 
- * @return {Boolean}
+ * @returns {Boolean}
  */
 export const isEven = val => val % 2 === 0;
 
@@ -65,7 +66,7 @@ export const isEven = val => val % 2 === 0;
  * isNot method
  * 
  * @param {*} val
- * @return {Boolean} 
+ * @returns {Boolean} 
  */
 export const isNot = val => val == null || val == undefined;
 
@@ -74,12 +75,15 @@ export const isNot = val => val == null || val == undefined;
  * 
  * @param {*} val 
  * @param {Function} fn 
+ * @returns {null | *}
  */
 export const maybe = (val, fn) => isNot(val) ? null : fn(val);
 
 /**
  * memoize method
+ * 
  * @param {Function} fn
+ * @returns {*}
  */
 export const memoize = fn => {
   let cache = {};
@@ -91,12 +95,17 @@ export const memoize = fn => {
 
 /**
  * not method
+ * 
  * @param {Function} fn
+ * @returns {Boolean}
  */
 export const not = fn => (...args) => !fn(...args);
 
 /**
  * once method
+ * 
+ * @param {Function} fn
+ * @returns {*} 
  */
 export const once = fn => {
   let done = false;
@@ -114,6 +123,10 @@ export const once = fn => {
 
 /**
  * onceAndAfter method
+ * 
+ * @param {Function} f
+ * @param {Function} g
+ * @returns {*}
  */
 export const onceAndAfter = (f, g) => {
   let toCall = f;
@@ -128,14 +141,16 @@ export const onceAndAfter = (f, g) => {
 /**
  * pipe method
  * 
- * @param {Function}
- * @return {Function}
+ * @param {Array} fns
+ * @returns {Function}
  */
 export const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
 
 /**
  * unary method
- * @param {Function}
+ * 
+ * @param {Function} fn
+ * @returns {*}
  */
 export const unary = fn => (...args) => fn(args[0])
 
@@ -143,6 +158,6 @@ export const unary = fn => (...args) => fn(args[0])
  * undef method
  * 
  * @param {*} x
- * @return {Boolean}
+ * @returns {Boolean}
  */
 export const undef = x => !def(x)
