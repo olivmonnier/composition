@@ -146,6 +146,18 @@ export const pluck = (list, prop) => from(list).map(o => o.prop);
 export const random = list => list[Math.floor(Math.random() * list.length)];
 
 /**
+ * removeIndex method
+ * 
+ * @param {Array} list
+ * @param {Integer} oldIndex
+ * @return {Array}
+ */
+export const removeIndex = (list, oldIndex) => [].concat(
+  list.slice(0, oldIndex),
+  list.slice(oldIndex + 1, list.length)
+)
+
+/**
  * slice method
  * 
  * @param {Array} list
@@ -179,4 +191,33 @@ export const sort = (list, fn) => from(list).sort(fn);
  */
 export const tail = ([x, ...xs]) => xs;
 
+/**
+ * toFirst method
+ * 
+ * @param {Array} list
+ * @param {Integer} oldIndex
+ * @return {Array}
+ */
+export const toFirst = (list, oldIndex) => [].concat(
+  list[oldIndex],
+  removeIndex(list, oldIndex)
+)
+
+/**
+ * toLast method
+ * 
+ * @param {Array} list
+ * @param {Integer} oldIndex
+ * @return {Array}
+ */
+export const toLast = (list, oldIndex) => [].concat(
+  removeIndex(list, oldIndex),
+  list[oldIndex]
+)
+
+/**
+ * wrap method
+ * @param {*} something 
+ * @return {Array}
+ */
 export const wrap = something => [something];

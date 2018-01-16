@@ -1,10 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const assert = chai.assert;
-const compose = require('../src/function').compose;
-const curry = require('../src/function').curry;
-const flip = require('../src/function').flip;
-const pipe = require('../src/function').pipe;
+const { compose, curry, flip, pipe } = require('../src/functions');
 
 describe('Function', () => {  
   describe('compose method', () => {

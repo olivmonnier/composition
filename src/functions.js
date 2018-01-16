@@ -45,7 +45,7 @@ export const def = x => typeof x !== 'undefined';
  * @param {Function} fn
  * @return {Function}
  */
-export const flip = (fn, ...args) => fn.bind(null, args.reverse());
+export const flip = fn => (...args) => fn.apply(null, args.reverse());
 
 /**
  * invert method
