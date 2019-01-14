@@ -14,11 +14,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: [/\.jsx?$/, /\.tsx?$/],
         exclude: /node_modules/,
         use: ['babel-loader']
       }            
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
   },
   optimization: {
     minimize: true
