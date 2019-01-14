@@ -5,4 +5,4 @@
  * @param {String} str
  * @returns {String}
  */
-export default join = (list, str) => from(list).join(str);
+export default join = (list, str) => Array.from(list).join(str);

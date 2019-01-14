@@ -8,4 +8,4 @@
 export default removeIndex = (list, oldIndex) => [].concat(
   list.slice(0, oldIndex),
   list.slice(oldIndex + 1, list.length)
-)
+);

@@ -10,4 +10,4 @@ import removeIndex from './removeIndex'
 export default toLast = (list, oldIndex) => [].concat(
   removeIndex(list, oldIndex),
   list[oldIndex]
-)
+);

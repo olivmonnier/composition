@@ -15,15 +15,12 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: {
-          loader: 'babel-loader'
-        }
+        exclude: /node_modules/,
+        use: ['babel-loader']
       }            
     ]
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true
-    })
-  ]
+  optimization: {
+    minimize: true
+  }
 }

@@ -5,4 +5,4 @@
  * @param {Function} fn
  * @returns {Boolean}
  */
-export default some = (list, fn) => from(list).reduce((x, y) => x || fn(y), false);
+export default some = (list, fn) => Array.from(list).some(fn);

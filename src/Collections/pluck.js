@@ -5,4 +5,4 @@
  * @param {String} prop
  * @returns {Array}
  */
-export default pluck = (list, prop) => from(list).map(o => o[prop]);
+export default pluck = (list, prop) => Array.from(list).map(o => o[prop]);

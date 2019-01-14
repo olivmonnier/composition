@@ -5,4 +5,4 @@
  * @param {Function} fn
  * @returns {*}
  */
-export default find = (list, fn) => from(list).reduce((x, y) => (x === undefined && fn(y) ? y : x), undefined);
+export default find = (list, fn) => Array.from(list).find(fn);

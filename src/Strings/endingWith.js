@@ -6,6 +6,6 @@
  * @returns {Boolean}
  */
 export default endingWith = (str, strMatch) => {
-  const regex = new RegExp(`${strMatch}$`)
-  return regex.test(str)
+  const regex = new RegExp(`${strMatch}$`);
+  return regex.test(str);
 }

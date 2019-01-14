@@ -1,5 +1,5 @@
-import from from '../Collections/from'
-import getElements from './getElements'
+import getElements from './getElements';
+import each from '../Collections/each';
 
 /**
  * forEachElements method
@@ -8,4 +8,4 @@ import getElements from './getElements'
  * @param {Function} fn 
  * @returns {*}
  */
-export default forEachElements = (selector, fn) => from(getElements(selector)).forEach(elem => fn(elem));
+export default forEachElements = (selector, fn) => each(getElements(selector), fn);

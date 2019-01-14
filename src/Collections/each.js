@@ -5,4 +5,4 @@
  * @param {Function} fn
  * @returns {*}
  */
-export default each = (list, fn) => from(list).forEach(fn);
+export default each = (list, fn) => Array.from(list).forEach(fn);

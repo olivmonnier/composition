@@ -5,4 +5,4 @@
  * @param {Function} fn
  * @returns {Array}
  */
-export default sort = (list, fn) => from(list).sort(fn);
+export default sort = (list, fn) => Array.from(list).sort(fn);

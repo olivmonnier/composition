@@ -4,4 +4,4 @@
  * @param {Function} fn
  * @returns {*}
  */
-export default unary = fn => (...args) => fn(args[0])
+export default unary = fn => (...args) => fn(args[0]);

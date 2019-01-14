@@ -9,5 +9,5 @@ export default withConstructor = constructor => obj => {
     Object.getPrototypeOf(obj),
     { constructor }
   );
-  return Object.assign(Object.create(proto), obj)
+  return Object.assign(Object.create(proto), obj);
 }

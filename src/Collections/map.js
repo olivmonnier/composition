@@ -5,4 +5,4 @@
  * @param {Function} fn
  * @returns {Array}
  */
-export default map = (list, fn) => from(list).map(fn);
+export default map = (list, fn) => Array.from(list).map(fn);

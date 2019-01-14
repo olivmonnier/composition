@@ -5,4 +5,4 @@
  * @param {Function} fn
  * @returns {*}
  */
-export default every = (list, fn) => from(list).reduce((x, y) => x && fn(y), true);
+export default every = (list, fn) => Array.from(list).reduce((x, y) => x && fn(y), true);
