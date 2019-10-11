@@ -1,9 +1,3 @@
-import { approximatelyEqual } from "./approximatelyEqual";
-import { average } from "./average";
-import { averageBy } from "./averageBy";
-
-export default {
-  approximatelyEqual,
-  average,
-  averageBy
-};
+export { approximatelyEqual } from "./approximatelyEqual";
+export { average } from "./average";
+export { averageBy } from "./averageBy";

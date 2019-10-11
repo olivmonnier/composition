@@ -1,5 +1,1 @@
-import { createDirIfNotExists } from "./createDirIfNotExists";
-
-export default {
-  createDirIfNotExists
-};
+export { createDirIfNotExists } from "./createDirIfNotExists";

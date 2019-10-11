@@ -1,5 +1,1 @@
-import { defaults } from "./defaults";
-
-export default {
-  defaults
-};
+export { defaults } from "./defaults";

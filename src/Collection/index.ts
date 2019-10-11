@@ -1,23 +1,10 @@
-import { all } from "./all";
-import { allEqual } from "./allEqual";
-import { arrayToCSV } from "./arrayToCSV";
-import { arrayToHtmlList } from "./arrayToHtmlList";
-import { bifurcate } from "./bifurcate";
-import { bifurcateBy } from "./bifurcateBy";
-import { castArray } from "./castArray";
-import { compact } from "./compact";
-import { countOccurrences } from "./countOccurrences";
-import { deepFlatten } from "./deepFlatten";
-
-export default {
-  all,
-  allEqual,
-  arrayToCSV,
-  arrayToHtmlList,
-  bifurcate,
-  bifurcateBy,
-  castArray,
-  compact,
-  countOccurrences,
-  deepFlatten
-};
+export { all } from "./all";
+export { allEqual } from "./allEqual";
+export { arrayToCSV } from "./arrayToCSV";
+export { arrayToHtmlList } from "./arrayToHtmlList";
+export { bifurcate } from "./bifurcate";
+export { bifurcateBy } from "./bifurcateBy";
+export { castArray } from "./castArray";
+export { compact } from "./compact";
+export { countOccurrences } from "./countOccurrences";
+export { deepFlatten } from "./deepFlatten";
