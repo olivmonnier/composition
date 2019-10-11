@@ -1,5 +1,1 @@
-import { dayOfYear } from "./dayOfYear";
-
-export default {
-  dayOfYear
-};
+export { dayOfYear } from "./dayOfYear";

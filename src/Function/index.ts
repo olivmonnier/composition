@@ -1,7 +1,2 @@
-import { attempt } from "./attempt";
-import { currentURL } from "./currentUrl";
-
-export default {
-  attempt,
-  currentURL
-};
+export { attempt } from "./attempt";
+export { currentURL } from "./currentUrl";

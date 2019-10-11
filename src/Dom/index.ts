@@ -1,5 +1,1 @@
-import { bottomVisible } from "./bottomVisible";
-
-export default {
-  bottomVisible
-};
+export { bottomVisible } from "./bottomVisible";
