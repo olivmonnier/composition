@@ -19,3 +19,4 @@ export { filterNonUnique } from "./filterNonUnique";
 export { findLast } from "./findLast";
 export { flatten } from "./flatten";
 export { forEachRight } from "./forEachRight";
+export { head } from "./head";
