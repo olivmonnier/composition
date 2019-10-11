@@ -3,3 +3,4 @@ export { currentURL } from "./currentUrl";
 export { defer } from "./defer";
 export { digitize } from "./digitize";
 export { functionName } from "./functionName";
+export { httpsRedirect } from "./httpsRedirect";
