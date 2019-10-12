@@ -7,3 +7,8 @@ export { httpsRedirect } from "./httpsRedirect";
 export { is } from "./is";
 export { isArrayLike } from "./isArrayLike";
 export { isBoolean } from "./isBoolean";
+export { isBrowser } from "./isBrowser";
+export { isBrowserTabFocused } from "./isBrowserTabFocused";
+export { isNil } from "./isNil";
+export { isNull } from "./isNull";
+export { isNumber } from "./isNumber";
