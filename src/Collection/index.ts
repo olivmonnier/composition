@@ -20,3 +20,8 @@ export { findLast } from "./findLast";
 export { flatten } from "./flatten";
 export { forEachRight } from "./forEachRight";
 export { head } from "./head";
+export { indexOfAll } from "./indexOfAll";
+export { initial } from "./initial";
+export { intersection } from "./intersection";
+export { intersectionBy } from "./intersectionBy";
+export { intersectionWith } from "./intersectionWith";
