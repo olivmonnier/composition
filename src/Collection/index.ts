@@ -25,3 +25,5 @@ export { initial } from "./initial";
 export { intersection } from "./intersection";
 export { intersectionBy } from "./intersectionBy";
 export { intersectionWith } from "./intersectionWith";
+export { last } from "./last";
+export { maxN } from "./maxN";

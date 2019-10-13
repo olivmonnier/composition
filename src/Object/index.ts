@@ -6,3 +6,5 @@ export { isObject } from "./isObject";
 export { isObjectLike } from "./isObjectLike";
 export { isPlainObject } from "./isPlainObject";
 export { isPromiseLike } from "./isPromiseLike";
+export { isSymbol } from "./isSymbol";
+export { matches } from "./matches";
