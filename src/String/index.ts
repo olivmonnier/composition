@@ -9,3 +9,8 @@ export { isUpperCase } from "./isUpperCase";
 export { isValidJSON } from "./isValidJSON";
 export { pad } from "./pad";
 export { reverseString } from "./reverseString";
+export { sortCharactersInString } from "./sortCharactersInString";
+export { splitLines } from "./splitLines";
+export { stripHTMLTags } from "./stripHTMLTags";
+export { toDecimalMark } from "./toDecimalMark";
+export { words } from "./words";

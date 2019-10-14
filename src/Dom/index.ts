@@ -9,3 +9,5 @@ export { nodeListToArray } from "./nodeListToArray";
 export { scrollToTop } from "./scrollToTop";
 export { setStyle } from "./setStyle";
 export { show } from "./show";
+export { smoothScroll } from "./smoothScroll";
+export { toggleClass } from "./toggleClass";
