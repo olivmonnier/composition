@@ -13,3 +13,7 @@ export { isNil } from "./isNil";
 export { isNull } from "./isNull";
 export { isNumber } from "./isNumber";
 export { isUndefined } from "./isUndefined";
+export { negate } from "./negate";
+export { randomHexColorCode } from "./randomHexColorCode";
+export { redirect } from "./redirect";
+export { serializeCookie } from "./serializeCookie";

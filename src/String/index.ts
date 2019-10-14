@@ -7,3 +7,5 @@ export { isLowerCase } from "./isLowerCase";
 export { isString } from "./isString";
 export { isUpperCase } from "./isUpperCase";
 export { isValidJSON } from "./isValidJSON";
+export { pad } from "./pad";
+export { reverseString } from "./reverseString";
