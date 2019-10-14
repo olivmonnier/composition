@@ -27,3 +27,8 @@ export { intersectionBy } from "./intersectionBy";
 export { intersectionWith } from "./intersectionWith";
 export { last } from "./last";
 export { maxN } from "./maxN";
+export { minN } from "./minN";
+export { runPromisesInSeries } from "./runPromisesInSeries";
+export { sample } from "./sample";
+export { sampleSize } from "./sampleSize";
+export { shuffle } from "./shuffle";

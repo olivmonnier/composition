@@ -8,3 +8,4 @@ export { isPlainObject } from "./isPlainObject";
 export { isPromiseLike } from "./isPromiseLike";
 export { isSymbol } from "./isSymbol";
 export { matches } from "./matches";
+export { shallowClone } from "./shallowClone";
