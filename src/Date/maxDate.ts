@@ -10,6 +10,11 @@
  * ];
  * maxDate(array); // 2018-03-11T22:00:00.000Z
  */
-export function maxDate(...dates: Array<Date>): Date {
-  return new Date(Math.max.apply(null, ...dates));
+export function maxDate(dates: Date[]): Date {
+  return new Date(
+    Math.max.apply(
+      null,
+      dates.map((d) => d.getTime())
+    )
+  );
 }

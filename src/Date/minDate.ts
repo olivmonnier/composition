@@ -10,6 +10,11 @@
  * ];
  * minDate(array); // 2016-01-08T22:00:00.000Z
  */
-export function minDate(...dates: Array<Date>): Date {
-  return new Date(Math.min.apply(null, ...dates));
+export function minDate(dates: Date[]): Date {
+  return new Date(
+    Math.min.apply(
+      null,
+      dates.map((d) => d.getTime())
+    )
+  );
 }

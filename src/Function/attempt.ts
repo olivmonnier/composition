@@ -7,10 +7,10 @@
  * }, '>_>');
  * if (elements instanceof Error) elements = []; // elements = []
  */
-export function attempt(fn: Function, ...args: any[]): any {
+export function attempt<T>(fn: Function, ...args: T[]) {
   try {
     return fn(...args);
   } catch (e) {
-    return e instanceof Error ? e : new Error(e);
+    throw e;
   }
 }
