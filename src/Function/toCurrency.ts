@@ -11,10 +11,10 @@
 export function toCurrency(
   n: number,
   curr: string,
-  LanguageFormat: string = undefined
+  LanguageFormat?: string
 ): string {
   return Intl.NumberFormat(LanguageFormat, {
     style: "currency",
-    currency: curr
+    currency: curr,
   }).format(n);
 }

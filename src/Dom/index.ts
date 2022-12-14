@@ -5,7 +5,6 @@ export { hasClass } from "./hasClass";
 export { hide } from "./hide";
 export { insertAfter } from "./insertAfter";
 export { insertBefore } from "./insertBefore";
-export { nodeListToArray } from "./nodeListToArray";
 export { scrollToTop } from "./scrollToTop";
 export { setStyle } from "./setStyle";
 export { show } from "./show";

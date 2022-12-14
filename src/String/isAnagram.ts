@@ -5,7 +5,7 @@
  * isAnagram('iceman', 'cinema'); // true
  */
 export function isAnagram(str1: string, str2: string): Boolean {
-  const normalize = str =>
+  const normalize = (str: string) =>
     str
       .toLowerCase()
       .replace(/[^a-z0-9]/gi, "")

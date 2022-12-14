@@ -5,8 +5,8 @@
  * smoothScroll('#fooBar'); // scrolls smoothly to the element with the id fooBar
  * smoothScroll('.fooBar'); // scrolls smoothly to the first element with a class of fooBar
  */
-export function smoothScroll(element: string): void {
-  document.querySelector(element).scrollIntoView({
-    behavior: "smooth"
+export function smoothScroll(element: string) {
+  document.querySelector(element)?.scrollIntoView({
+    behavior: "smooth",
   });
 }

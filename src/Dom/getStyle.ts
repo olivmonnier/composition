@@ -4,6 +4,6 @@
  * @example
  * getStyle(document.querySelector('p'), 'font-size'); // '16px'
  */
-export function getStyle(el: HTMLElement, ruleName: string): any {
+export function getStyle(el: HTMLElement, ruleName: keyof CSSStyleDeclaration) {
   return getComputedStyle(el)[ruleName];
 }

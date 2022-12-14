@@ -4,9 +4,8 @@
  * @example
  * arrayToHtmlList(['item 1', 'item 2'], 'myListID');
  */
-export function arrayToHtmlList(arr: Array<any>, listID: string): void {
-  (el => (
-    (el = document.querySelector("#" + listID)),
-    (el.innerHTML += arr.map(item => `<li>${item}</li>`).join(""))
-  ))();
+export function arrayToHtmlList<T>(arr: T[], listID: string): void {
+  const el = document.querySelector("#" + listID);
+  if (!el) return;
+  el.innerHTML += arr.map((item) => `<li>${item}</li>`).join("");
 }
