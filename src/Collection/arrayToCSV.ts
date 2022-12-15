@@ -6,8 +6,8 @@
  * arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
  */
 export function arrayToCSV(
-  arr: Array<Array<string | number>>,
+  arr: (string | number)[][],
   delimiter: string = ","
-): string {
-  return arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join("\n");
+) {
+  return arr.map((v) => v.map((x) => `"${x}"`).join(delimiter)).join("\n");
 }

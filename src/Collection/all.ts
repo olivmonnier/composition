@@ -5,9 +5,6 @@
  * all([4, 2, 3], x => x > 1); // true
  * all([1, 2, 3]); // true
  */
-export function all(
-  arr: Array<any>,
-  fn: (value: any) => unknown = Boolean
-): Boolean {
+export function all<T>(arr: T[], fn: (value: T) => unknown = Boolean) {
   return arr.every(fn);
 }
